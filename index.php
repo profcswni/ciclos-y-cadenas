@@ -25,7 +25,9 @@
         //$num++;
     //}
     //Cadenas en PHP
-    $texto = "carlos andres perez ubeda.";
+    //Tarjeta de credito
+    $tarjeta = "5105";
+    $texto = "carlos andres perez ubeda";
     echo "<p>Texto original</p>";
     echo $texto;
     
@@ -57,7 +59,59 @@
     //Buscar una cadena
     echo "<br>";
     echo "<p>Buscar una cadena</p>";
-    echo strstr($texto, "andres");
+    echo strstr($texto, "perez");
+
+    //Reemplazar texto en una cadena
+    echo "<br>";
+    echo "<p>Reemplazar texto en una cadena</p>";
+    echo str_replace("e", "-", $texto);
+
+    //Completar caracteres en una cadena por la izquierda
+    echo "<br>";
+    echo "<p>Completar caracteres en una cadena por la izquierda</p>";
+    echo str_pad($tarjeta, 16, "*", STR_PAD_LEFT);
+
+    //Completar caracteres en una cadena por la derecha
+    echo "<br>";
+    echo "<p>Completar caracteres en una cadena por la derecha</p>";
+    echo str_pad($tarjeta, 16, "*", STR_PAD_RIGHT);
+
+    //Completar caracteres en una cadena por ambos lados
+    echo "<br>";
+    echo "<p>Completar caracteres en una cadena por ambos lados</p>";
+    echo str_pad($tarjeta, 20, "*", STR_PAD_BOTH);
+
+    //Imprimir una cadena de texto en orden inverso
+    echo "<br>";
+    echo "<p>Imprimir una cadena de texto en orden inverso</p>";
+    echo strrev($texto);
+
+    //Imprimir el hash SHA1 de una cadena de texto
+    echo "<br>";
+    echo "<p>Imprimir el hash SHA1 de una cadena de texto</p>";
+    echo sha1($texto);
+
+    //Imprimir el hash MD5 de una cadena de texto
+    echo "<br>";
+    echo "<p>Imprimir el hash MD5 de una cadena de texto</p>";
+    echo md5($texto);
+
+    //Imprimir el hash CRC32 de una cadena de texto
+    echo "<br>";
+    echo "<p>Imprimir el hash CRC32 de una cadena de texto</p>";
+    echo crc32($texto);
+
+    //Encriptar una cadena de texto con el algoritmo AES
+    echo "<br>";
+    echo "<p>Encriptar una cadena de texto con el algoritmo password hash</p>";
+    echo password_hash($texto, PASSWORD_DEFAULT);
+
+    //Eliminar espacios en blanco de una cadena de texto
+    echo "<br>";
+    echo "<p>Eliminar espacios en blanco de una cadena de texto</p>";
+    echo trim($texto);
+    
+
     ?>
 </body>
 </html>
